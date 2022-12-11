@@ -1,0 +1,383 @@
+/* +++++++++++++++ Ressources +++++++++++++++ */
+
+@font-face {
+	font-family: regular;
+	src: url(fonts/Cremona.ttf);
+}
+
+@font-face {
+	font-family: design;
+	src: url(fonts/Hovel.ttf);
+}
+
+@font-face {
+	font-family: handwrite;
+	src: url(fonts/Creattion\ Demo.otf);
+}
+
+@font-face {
+	font-family: elegant;
+	src: url(fonts/Distant_Stroke.otf);
+}
+
+:root {
+	--main-color: #eeeeee;
+	--accent-color: red;
+	--low-color: #808080;
+	--high-color: black;
+	--toggle-color: #black;
+}
+
+.dark-theme {
+	--main-color: #171717;
+	--accent-color: rgb(103, 200, 33);
+	--low-color: #516e75;
+	--high-color: #eeeeee;
+	--toggle-color: rgb(103, 200, 33);
+}
+
+/* +++++++++++++++ Setup +++++++++++++++ */
+
+.preload * {
+	transition: none !important;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-weight: 500;
+	transition: color 0.4s, background-color 0.7s;
+	scroll-behavior: smooth;
+}
+
+body {
+	color: var(--high-color);
+	background-color: var(--main-color);
+	font-family: regular;
+	letter-spacing: 0.15em;
+}
+
+img {
+	transition: all 0.3s ease-in-out, transform 1s;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* +++++++++++++++ Styles +++++++++++++++ */
+
+.container {
+	background-color: var(--main-color);
+	display: flex;
+	height: 100vh;
+}
+
+/* +++++++++++++++ Section 1 +++++++++++++++ */
+
+.section-1 {
+	width: 85%;
+	margin-left: 2em;
+}
+
+/* +++++++++++++++ Header +++++++++++++++ */
+
+.header {
+	margin-top: 0.5em;
+	height: 15%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-right: 2em;
+}
+
+.brand {
+	flex: 1;
+	position: relative;
+	bottom: 3px;
+	left: 0.5vw;
+	font-size: 4rem;
+	font-family: handwrite;
+	color: var(--accent-color);
+}
+
+.navbar {
+	flex: 3;
+	margin-right: 4%;
+}
+
+.navbar ul {
+	list-style: none;
+	display: flex;
+	justify-content: right;
+	align-items: baseline;
+	column-gap: 10%;
+}
+
+.navbar a {
+	color: var(--low-color);
+	text-align: center;
+	position: relative;
+	z-index: 1;
+	transition: font-size 0.4s;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+	color: var(--high-color);
+	font-size: 1.3rem;
+}
+
+.navbar .link1::before,
+.navbar .link1::after {
+	position: absolute;
+	width: 2.5em;
+	top: 35%;
+	left: -1px;
+	content: "";
+	height: 1px;
+	background-color: var(--accent-color);
+	pointer-events: none;
+	transition: transform 0.4s, opacity 0.4s ease-out;
+	z-index: -1;
+	opacity: 0;
+}
+.navbar .link2::before,
+.navbar .link2::after {
+	position: absolute;
+	width: 3em;
+	top: 35%;
+	left: 9.5px;
+	content: "";
+	height: 1px;
+	background-color: var(--accent-color);
+	pointer-events: none;
+	transition: transform 0.4s, opacity 0.4s ease-out;
+	z-index: -1;
+	opacity: 0;
+}
+.navbar .link3::before,
+.navbar .link3::after {
+	position: absolute;
+	width: 2.5em;
+	top: 35%;
+	left: 1px;
+	content: "";
+	height: 1px;
+	background-color: var(--accent-color);
+	pointer-events: none;
+	transition: transform 0.4s, opacity 0.4s ease-out;
+	z-index: -1;
+	opacity: 0;
+}
+
+.navbar a:hover::before,
+.navbar a:focus::before {
+	opacity: 0.7;
+	transform: rotate(45deg);
+}
+
+.navbar a:hover::after,
+.navbar a:focus::after {
+	opacity: 0.7;
+	transform: rotate(-45deg);
+}
+
+/* +++++++++++++++ Home +++++++++++++++ */
+
+.home {
+	height: 85%;
+	display: flex;
+}
+
+.home-1 {
+	width: 85%;
+	position: relative;
+}
+
+.motto {
+	position: absolute;
+	bottom: 1em;
+}
+
+.motto .top {
+	position: relative;
+	left: 5px;
+	color: var(--accent-color);
+	font-weight: 700;
+}
+
+.motto .bottom {
+	color: var(--high-color);
+	font-size: 4rem;
+}
+
+.home-2 {
+	width: 15%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	writing-mode: vertical-rl;
+	column-gap: 1em;
+}
+
+.home-2 p {
+	color: var(--high-color);
+	word-spacing: 0.5em;
+}
+
+.home-2 span {
+	font-weight: 700;
+	color: var(--accent-color);
+}
+
+.arrow {
+	font-size: 1.5rem;
+	color: var(--high-color);
+}
+
+/* +++++++++++++++ Section 2 +++++++++++++++ */
+
+.section-2 {
+	width: 25%;
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.section-2:hover img {
+	transform: scale(1.05);
+}
+
+.img-theme {
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.img-theme img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+
+	position: absolute;
+}
+
+.img-theme .opacity {
+	opacity: 0;
+}
+
+.switch {
+	z-index: 1;
+	position: absolute;
+	font-size: 1.5rem;
+	top: 0.85em;
+	right: 0.8em;
+	transform: scaleX(-1);
+	cursor: pointer;
+	color: var(--toggle-color);
+}
+
+/* +++++++++++++++ Resume +++++++++++++++ */
+
+.resume {
+	position: absolute;
+	transform: translateX(1.3em);
+	bottom: 2em;
+	display: flex;
+	font-size: 1.05rem;
+	cursor: pointer;
+}
+
+.resume p {
+	color: var(--high-color);
+	background-color: var(--main-color);
+	padding: 1em 1em;
+	padding-bottom: 0.825em;
+	letter-spacing: 2px;
+	border: 1px solid var(--accent-color);
+}
+
+.resume-icon {
+	display: flex;
+	align-items: center;
+	padding: 0.6em 0.7em;
+	font-size: 1.25rem;
+	color: black;
+	background-color: var(--accent-color);
+	cursor: pointer;
+}
+
+/* +++++++++++++++ About Me Section +++++++++++++++ */
+
+.aboutAvatar {
+	width: 25%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.aboutAvatar:hover img {
+	transform: scale(1.05);
+}
+
+.avatar {
+	width: 100%;
+	height: 100%;
+}
+
+.avatar img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.aboutText {
+	width: 85%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+	height: 100%;
+}
+
+.greetings span {
+	color: var(--accent-color);
+	font-family: handwrite;
+	font-size: 3rem;
+}
+
+.aboutMe-main {
+	font-family: "Courier New", Courier, monospace;
+	width: 70%;
+}
+
+.aboutMe-second {
+	margin-top: 3em;
+	font-size: 0.6rem;
+	width: 90%;
+}
+
+.aboutMe-main span,
+.aboutMe-second span {
+	font-weight: 500;
+	color: var(--accent-color);
+}
+
+.comingSoon {
+	margin: auto;
+	font-size: 6rem;
+	color: var(--high-color);
+	transition: scale ease-in-out 1s, color ease-in-out 0.5s;
+}
+
+.comingSoon:hover {
+	color: var(--accent-color);
+	scale: 1.2;
+}
